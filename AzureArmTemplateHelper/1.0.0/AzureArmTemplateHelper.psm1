@@ -47,6 +47,37 @@ function CreateNewAzureStorageContainer
 }
 
 
+<#
+.SYNOPSIS
+Upload the ARM template files on local filesystem to blob storage of Azure storage.
+
+.DESCRIPTION
+This cmdlet helping to ARM template making by upload the ARM template files on local filesystem to blob storage of Azure storage. When you making linked ARM template, this cmdlet is especially helpful.
+
+.PARAMETER LocalBasePath
+The path of the folder on local filesystem that contains the ARM templates.
+
+.PARAMETER StorageAccountName
+The storage account name to upload the ARM templates.
+
+.PARAMETER StorageAccountKey
+The storage account key for storage account of StorageAccountName parameter.
+
+.PARAMETER ContainerName
+The container name to upload the ARM templates. This parameter is optional. Default container name is 'armtemplate'.
+
+.PARAMETER Force
+This switch parameter is optional. If you use this switch, overwrite the existing ARM templates in the container.
+
+.EXAMPLE
+PS > Set-AzureArmTemplateFile -LocalBasePath 'C:\TemplateWork' -StorageAccountName 'armtemplsa' -StorageAccountKey 'dWLe7OT3P0HevzLeKzRlk4j4eRws7jHStp0C4XJtQJhuH4p5EOP+vLcK1w8sZ3QscGLy50DnOzQoiUbpzXD9Jg==' -Force
+
+.LINK
+PowerShell Gallery page - https://www.powershellgallery.com/packages/AzureArmTemplateHelper/
+
+.LINK
+GitHub repository - https://github.com/tksh164/AzureArmTemplateHelper
+#>
 function Set-AzureArmTemplateFile
 {
     [CmdletBinding()]
