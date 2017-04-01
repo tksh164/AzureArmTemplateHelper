@@ -140,6 +140,40 @@ function Set-AzureArmTemplateFile
         }
 }
 
+
+<#
+.SYNOPSIS
+Build the URL of custom deployment blade for your ARM template.
+
+.DESCRIPTION
+This cmdlet building the URL that is access to custom deployment blade on Azure Portal. The URL allows deployment of your ARM template via Azure Portal.
+
+.PARAMETER TemplateUri
+The URI of your ARM template.
+
+.PARAMETER ShowDeployBlade
+This switch parameter is optional. If you use this switch, this cmdlet open the URL by your browser.
+
+.EXAMPLE
+    Get-AzureArmTemplateDeployUri -TemplateUri 'https://azurearmtemplate0820.blob.core.windows.net/armtemplate/main.json'
+
+    Uri
+    ---
+    https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fazurearmtemplate0820.blob.core.windows.net%2Farmtemplate%2Fmain.json
+
+This example is build the URL of custom deployment blade from your ARM template URL.
+
+.EXAMPLE
+    Get-AzureArmTemplateDeployUri -TemplateUri 'https://azurearmtemplate0820.blob.core.windows.net/armtemplate/main.json' -ShowDeployBlade
+
+This example is build the URL of custom deployment blade from your ARM template URL and open that URL by your browser.
+
+.LINK
+PowerShell Gallery page - https://www.powershellgallery.com/packages/AzureArmTemplateHelper/
+
+.LINK
+GitHub repository - https://github.com/tksh164/AzureArmTemplateHelper
+#>
 function Get-AzureArmTemplateDeployUri
 {
     [CmdletBinding()]
