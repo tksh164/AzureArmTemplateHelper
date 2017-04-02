@@ -157,16 +157,16 @@ The URI of your ARM template.
 This switch parameter is optional. If you use this switch, this cmdlet open the URL by your browser.
 
 .EXAMPLE
-    Get-AzureArmTemplateDeployUri -TemplateUri 'https://azurearmtemplate0820.blob.core.windows.net/armtemplate/main.json'
+    Get-AzureArmTemplateDeployUri -TemplateUri 'https://abcd1234.blob.core.windows.net/armtemplate/main.json'
 
     Uri
     ---
-    https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fazurearmtemplate0820.blob.core.windows.net%2Farmtemplate%2Fmain.json
+    https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fabcd1234.blob.core.windows.net%2Farmtemplate%2Fmain.json
 
 This example is build the URL of custom deployment blade from your ARM template URL.
 
 .EXAMPLE
-    Get-AzureArmTemplateDeployUri -TemplateUri 'https://azurearmtemplate0820.blob.core.windows.net/armtemplate/main.json' -ShowDeployBlade
+    Get-AzureArmTemplateDeployUri -TemplateUri 'https://abcd1234.blob.core.windows.net/armtemplate/main.json' -ShowDeployBlade
 
 This example is build the URL of custom deployment blade from your ARM template URL and open that URL by your browser.
 
