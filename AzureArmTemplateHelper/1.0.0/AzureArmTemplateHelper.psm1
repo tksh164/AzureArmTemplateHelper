@@ -70,7 +70,9 @@ The container name to upload the ARM templates. This parameter is optional. Defa
 This switch parameter is optional. If you use this switch, overwrite the existing ARM templates in the container.
 
 .EXAMPLE
-PS > Set-AzureArmTemplateFile -LocalBasePath 'C:\TemplateWork' -StorageAccountName 'armtemplsa' -StorageAccountKey 'dWLe7OT3P0HevzLeKzRlk4j4eRws7jHStp0C4XJtQJhuH4p5EOP+vLcK1w8sZ3QscGLy50DnOzQoiUbpzXD9Jg==' -Force
+    Set-AzureArmTemplateFile -LocalBasePath 'C:\TemplateWork' -StorageAccountName 'abcd1234' -StorageAccountKey 'dWLe7OT3P0HevzLeKzRlk4j4eRws7jHStp0C4XJtQJhuH4p5EOP+vLcK1w8sZ3QscGLy50DnOzQoiUbpzXD9Jg==' -Force
+
+This example is upload the ARM template files from under 'C:\TemplateWork' folder with recursive.
 
 .LINK
 PowerShell Gallery page - https://www.powershellgallery.com/packages/AzureArmTemplateHelper/
