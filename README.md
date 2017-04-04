@@ -61,3 +61,12 @@ This example is build the URL of custom deployment blade from your ARM template 
 ```PowerShell
 PS > Get-AzureArmTemplateDeployUri -TemplateUri 'https://abcd1234.blob.core.windows.net/armtemplate/main.json' -ShowDeployBlade
 ```
+
+
+## Release Notes
+
+### 1.0.1
+- Added help for cmdlets.
+
+### 1.0.0
+- Initial release.
