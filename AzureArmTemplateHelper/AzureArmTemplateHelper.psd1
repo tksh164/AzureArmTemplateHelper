@@ -12,7 +12,7 @@
 RootModule = 'AzureArmTemplateHelper.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.1'
+ModuleVersion = '1.0.2'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -117,7 +117,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'https://github.com/tksh164/AzureArmTemplateHelper/releases'
+        ReleaseNotes = 'https://github.com/tksh164/AzureArmTemplateHelper#release-notes'
 
         # External dependent modules of this module.
         ExternalModuleDependencies = @(
