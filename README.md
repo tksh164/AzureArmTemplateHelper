@@ -1,4 +1,4 @@
-# AzureArmTemplateHelper module
+# AzureArmTemplateHelper PowerShell Module
 This is PowerShell module that help for Azure ARM template making. This module contains two cmdlets.
 
 - Set-AzureArmTemplateFile cmdlet
