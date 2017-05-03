@@ -15,7 +15,7 @@ function CreateNewAzureStorageContainer
         [string] $ContainerName,
 
         [Parameter(Mandatory = $false)]
-        [int] $SleepSeconnds = 3
+        [int] $SleepSeconds = 3
     )
 
     $elapsedSeconds = 0
@@ -35,10 +35,10 @@ function CreateNewAzureStorageContainer
             {
                 # Waiting for Azure.
                 Write-Verbose -Message $_.Exception.Message
-                Write-Verbose -Message ('Waiting {0} seconds.' -f $SleepSeconnds)
+                Write-Verbose -Message ('Waiting {0} seconds.' -f $SleepSeconds)
                 Write-Progress -Activity ('Waiting for Azure... ({0}+ seconds elapsed)' -f $elapsedSeconds) -Status ('Reason: {0}' -f $_.Exception.Message)
-                Start-Sleep -Seconds $SleepSeconnds
-                $elapsedSeconds += $SleepSeconnds
+                Start-Sleep -Seconds $SleepSeconds
+                $elapsedSeconds += $SleepSeconds
             }
             else
             {
