@@ -91,7 +91,10 @@ function Set-AzureArmTemplateFile
         [Parameter(Mandatory = $true)]
         [string] $StorageAccountName,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter(ParameterSetName='ResourceGroupName', Mandatory = $true)]
+        [string] $ResourceGroupName,
+
+        [Parameter(ParameterSetName='StorageAccountKey', Mandatory = $true)]
         [string] $StorageAccountKey,
 
         [Parameter(Mandatory = $false)]
@@ -100,6 +103,16 @@ function Set-AzureArmTemplateFile
         [Parameter(Mandatory = $false)]
         [switch] $Force = $false
     )
+
+    if ($PSCmdlet.ParameterSetName -eq 'ResourceGroupName')
+    {
+        # Login check.
+        try { [void](Get-AzureRMContext -ErrorAction Stop) } catch { throw }
+
+        # Get the storage account key.
+        $StorageAccountKey = (Get-AzureRmStorageAccountKey -ResourceGroupName $ResourceGroupName -Name $StorageAccountName).Value | Select-Object -First 1
+        Write-Verbose -Message 'Got the storage account key.'
+    }
 
     # Standardize the path.
     if (-not $LocalBasePath.EndsWith('\'))
