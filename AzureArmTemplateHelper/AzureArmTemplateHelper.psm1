@@ -36,7 +36,7 @@ function CreateNewAzureStorageContainer
                 # Waiting for Azure.
                 Write-Verbose -Message $_.Exception.Message
                 Write-Verbose -Message ('Waiting {0} seconds.' -f $SleepSeconds)
-                Write-Progress -Activity ('Waiting for Azure... ({0}+ seconds elapsed)' -f $elapsedSeconds) -Status ('Reason: {0}' -f $_.Exception.Message)
+                Write-Progress -Activity ('Waiting for Azure... (Least {0} seconds elapsed)' -f $elapsedSeconds) -Status ('Reason: {0}' -f $_.Exception.Message)
                 Start-Sleep -Seconds $SleepSeconds
                 $elapsedSeconds += $SleepSeconds
             }
