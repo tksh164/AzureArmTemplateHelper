@@ -11,7 +11,7 @@ function CreateNewAzureStorageContainer
         [Parameter(Mandatory = $true)]
         [Microsoft.WindowsAzure.Commands.Common.Storage.AzureStorageContext] $Context,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()]
         [string] $ContainerName,
 
         [Parameter(Mandatory = $false)]
@@ -96,19 +96,19 @@ function Set-AzureArmTemplateFile
     [CmdletBinding()]
     [OutputType([PSCustomObject[]])]
     param (
-        [Parameter(Mandatory = $true)]
+        [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][ValidateScript({ Test-Path -PathType Container -LiteralPath $_ })]
         [string] $LocalBasePath,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()]
         [string] $StorageAccountName,
 
-        [Parameter(ParameterSetName='ResourceGroupName', Mandatory = $true)]
+        [Parameter(ParameterSetName='ResourceGroupName', Mandatory = $true)][ValidateNotNullOrEmpty()]
         [string] $ResourceGroupName,
 
-        [Parameter(ParameterSetName='StorageAccountKey', Mandatory = $true)]
+        [Parameter(ParameterSetName='StorageAccountKey', Mandatory = $true)][ValidateNotNullOrEmpty()]
         [string] $StorageAccountKey,
 
-        [Parameter(Mandatory = $false)]
+        [Parameter(Mandatory = $false)][ValidateNotNullOrEmpty()]
         [string] $ContainerName = 'armtemplate',
 
         [Parameter(Mandatory = $false)]
@@ -208,12 +208,11 @@ function Get-AzureArmTemplateDeployUri
     [CmdletBinding()]
     [OutputType([PSCustomObject])]
     param(
-        [Parameter(Mandatory = $true, Position = 0)]
+        [Parameter(Mandatory = $true, Position = 0)][ValidateNotNullOrEmpty()]
         [string] $TemplateUri,
 
         [Parameter(Mandatory = $false)]
         [switch] $ShowDeployBlade = $false
-
     )
 
     $createUri = 'https://portal.azure.com/#create/Microsoft.Template/uri/'
