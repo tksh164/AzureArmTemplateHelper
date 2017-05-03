@@ -15,8 +15,10 @@ function CreateNewAzureStorageContainer
         [string] $ContainerName,
 
         [Parameter(Mandatory = $false)]
-        [int] $SleepSeconnds = 5
+        [int] $SleepSeconds = 3
     )
+
+    $elapsedSeconds = 0
 
     while ($true)
     {
@@ -31,12 +33,12 @@ function CreateNewAzureStorageContainer
             if (($_.FullyQualifiedErrorId -eq 'StorageException,Microsoft.WindowsAzure.Commands.Storage.Blob.Cmdlet.NewAzureStorageContainerCommand') -and
                 ($_.Exception.InnerException -ne $null) -and ($_.Exception.InnerException.RequestInformation.HttpStatusCode -eq 409))
             {
-                Write-Verbose -Message $_.Exception.Message
-
                 # Waiting for Azure.
-                $SleepSeconnds = 5
-                Write-Verbose -Message ('Waiting {0} seconds.' -f $SleepSeconnds)
-                Start-Sleep -Seconds $SleepSeconnds
+                Write-Verbose -Message $_.Exception.Message
+                Write-Verbose -Message ('Waiting {0} seconds.' -f $SleepSeconds)
+                Write-Progress -Activity ('Waiting for Azure... (Least {0} seconds elapsed)' -f $elapsedSeconds) -Status ('Reason: {0}' -f $_.Exception.Message)
+                Start-Sleep -Seconds $SleepSeconds
+                $elapsedSeconds += $SleepSeconds
             }
             else
             {
@@ -44,6 +46,8 @@ function CreateNewAzureStorageContainer
             }
         }
     }
+
+    Write-Progress -Activity 'Completed waiting.' -Completed
 }
 
 
