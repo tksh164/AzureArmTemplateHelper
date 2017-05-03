@@ -60,6 +60,9 @@ The path of the folder on local filesystem that contains the ARM templates.
 .PARAMETER StorageAccountName
 The storage account name to upload the ARM templates.
 
+.PARAMETER ResourceGroupName
+The resource group name that it contains the storage account of StorageAccountName parameter.
+
 .PARAMETER StorageAccountKey
 The storage account key for storage account of StorageAccountName parameter.
 
@@ -68,6 +71,11 @@ The container name to upload the ARM templates. This parameter is optional. Defa
 
 .PARAMETER Force
 This switch parameter is optional. If you use this switch, overwrite the existing ARM templates in the container.
+
+.EXAMPLE
+    Set-AzureArmTemplateFile -LocalBasePath 'C:\TemplateWork' -StorageAccountName 'abcd1234' -ResourceGroupName 'ArmTemplateDev-RG' -Force
+
+This example is upload the ARM template files from under 'C:\TemplateWork' folder with recursive. You need execute Login-AzureRmAccount cmdlet before execute this cmdlet because this example use ResourceGroupName parameter.
 
 .EXAMPLE
     Set-AzureArmTemplateFile -LocalBasePath 'C:\TemplateWork' -StorageAccountName 'abcd1234' -StorageAccountKey 'dWLe7OT3P0HevzLeKzRlk4j4eRws7jHStp0C4XJtQJhuH4p5EOP+vLcK1w8sZ3QscGLy50DnOzQoiUbpzXD9Jg==' -Force
@@ -91,7 +99,10 @@ function Set-AzureArmTemplateFile
         [Parameter(Mandatory = $true)]
         [string] $StorageAccountName,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter(ParameterSetName='ResourceGroupName', Mandatory = $true)]
+        [string] $ResourceGroupName,
+
+        [Parameter(ParameterSetName='StorageAccountKey', Mandatory = $true)]
         [string] $StorageAccountKey,
 
         [Parameter(Mandatory = $false)]
@@ -100,6 +111,16 @@ function Set-AzureArmTemplateFile
         [Parameter(Mandatory = $false)]
         [switch] $Force = $false
     )
+
+    if ($PSCmdlet.ParameterSetName -eq 'ResourceGroupName')
+    {
+        # Login check.
+        try { [void](Get-AzureRMContext -ErrorAction Stop) } catch { throw }
+
+        # Get the storage account key.
+        $StorageAccountKey = (Get-AzureRmStorageAccountKey -ResourceGroupName $ResourceGroupName -Name $StorageAccountName).Value | Select-Object -First 1
+        Write-Verbose -Message 'Got the storage account key.'
+    }
 
     # Standardize the path.
     if (-not $LocalBasePath.EndsWith('\'))

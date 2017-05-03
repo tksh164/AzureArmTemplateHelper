@@ -20,6 +20,7 @@ Parameter Name     | Description
 -------------------|-------------------
 LocalBasePath      | The path of the folder on local filesystem that contains the ARM templates.
 StorageAccountName | The storage account name to upload the ARM templates.
+ResourceGroupName  | The resource group name that it contains the storage account of StorageAccountName parameter.
 StorageAccountKey  | The storage account key for storage account of StorageAccountName parameter.
 ContainerName      | The container name to upload the ARM templates. This parameter is optional. Default container name is 'armtemplate'.
 Force              | This switch parameter is optional. If you use this switch, overwrite the existing ARM templates in the container.
@@ -27,6 +28,13 @@ Force              | This switch parameter is optional. If you use this switch, 
 ### Examples
 
 #### Example 1
+This example is upload the ARM template files from under 'C:\TemplateWork' folder with recursive. You need execute Login-AzureRmAccount cmdlet before execute this cmdlet because this example use ResourceGroupName parameter.
+
+```PowerShell
+PS > Set-AzureArmTemplateFile -LocalBasePath 'C:\TemplateWork' -StorageAccountName 'abcd1234' -ResourceGroupName 'ArmTemplateDev-RG' -Force
+```
+
+#### Example 2
 This example is upload the ARM template files from under 'C:\TemplateWork' folder with recursive.
 
 ```PowerShell
