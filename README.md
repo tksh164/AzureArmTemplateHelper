@@ -73,6 +73,14 @@ PS > Get-AzureArmTemplateDeployUri -TemplateUri 'https://abcd1234.blob.core.wind
 
 ## Release Notes
 
+### [1.0.2](https://github.com/tksh164/AzureArmTemplateHelper/releases/tag/1.0.2)
+- Added ResourceGroupName parameter set to Set-AzureArmTemplateFile cmdlet.
+- Improved progress messages.
+- Improved parameter validations.
+- Updated helps.
+- Updated PowerShell Gallery metadata.
+- Some fixes.
+
 ### [1.0.1](https://github.com/tksh164/AzureArmTemplateHelper/releases/tag/1.0.1)
 - Added help for cmdlets.
 
