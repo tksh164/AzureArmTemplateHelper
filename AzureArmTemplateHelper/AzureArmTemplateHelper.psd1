@@ -108,16 +108,16 @@ PrivateData = @{
         Tags = @('Azure', 'ARM', 'Template', 'ARMTemplate', 'ResourceGroup', 'Deploy')
 
         # A URL to the license for this module.
-        LicenseUri = 'https://github.com/tksh164/AzureArmTemplateHelper/blob/master/LICENSE'
+        LicenseUri = 'https://github.com/tksh164/AzureArmTemplateHelper-PowerShellModule/blob/master/LICENSE'
 
         # A URL to the main website for this project.
-        ProjectUri = 'https://github.com/tksh164/AzureArmTemplateHelper'
+        ProjectUri = 'https://github.com/tksh164/AzureArmTemplateHelper-PowerShellModule'
 
         # A URL to an icon representing this module.
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'https://github.com/tksh164/AzureArmTemplateHelper#release-notes'
+        ReleaseNotes = 'https://github.com/tksh164/AzureArmTemplateHelper-PowerShellModule#release-notes'
 
         # External dependent modules of this module.
         ExternalModuleDependencies = @(
@@ -131,7 +131,7 @@ PrivateData = @{
 } # End of PrivateData hashtable
 
 # HelpInfo URI of this module
-HelpInfoURI = 'https://github.com/tksh164/AzureArmTemplateHelper'
+HelpInfoURI = 'https://github.com/tksh164/AzureArmTemplateHelper-PowerShellModule'
 
 # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
 # DefaultCommandPrefix = ''

@@ -90,7 +90,7 @@ This example is upload the ARM template files from under 'C:\TemplateWork' folde
 PowerShell Gallery: https://www.powershellgallery.com/packages/AzureArmTemplateHelper/
 
 .LINK
-GitHub: https://github.com/tksh164/AzureArmTemplateHelper
+GitHub: https://github.com/tksh164/AzureArmTemplateHelper-PowerShellModule
 
 .LINK
 Get-AzureArmTemplateDeployUri
@@ -202,7 +202,7 @@ This example is build the URL of custom deployment blade from your ARM template 
 PowerShell Gallery: https://www.powershellgallery.com/packages/AzureArmTemplateHelper/
 
 .LINK
-GitHub: https://github.com/tksh164/AzureArmTemplateHelper
+GitHub: https://github.com/tksh164/AzureArmTemplateHelper-PowerShellModule
 
 .LINK
 Set-AzureArmTemplateFile
