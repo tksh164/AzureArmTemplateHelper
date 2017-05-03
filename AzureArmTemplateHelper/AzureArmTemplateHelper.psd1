@@ -117,7 +117,7 @@ PrivateData = @{
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'https://github.com/tksh164/AzureArmTemplateHelper/releases'
+        ReleaseNotes = 'https://github.com/tksh164/AzureArmTemplateHelper#release-notes'
 
         # External dependent modules of this module.
         ExternalModuleDependencies = @(
