@@ -83,10 +83,13 @@ This example is upload the ARM template files from under 'C:\TemplateWork' folde
 This example is upload the ARM template files from under 'C:\TemplateWork' folder with recursive.
 
 .LINK
-PowerShell Gallery page - https://www.powershellgallery.com/packages/AzureArmTemplateHelper/
+PowerShell Gallery: https://www.powershellgallery.com/packages/AzureArmTemplateHelper/
 
 .LINK
-GitHub repository - https://github.com/tksh164/AzureArmTemplateHelper
+GitHub: https://github.com/tksh164/AzureArmTemplateHelper
+
+.LINK
+Get-AzureArmTemplateDeployUri
 #>
 function Set-AzureArmTemplateFile
 {
@@ -192,10 +195,13 @@ This example is build the URL of custom deployment blade from your ARM template 
 This example is build the URL of custom deployment blade from your ARM template URL and open that URL by your browser.
 
 .LINK
-PowerShell Gallery page - https://www.powershellgallery.com/packages/AzureArmTemplateHelper/
+PowerShell Gallery: https://www.powershellgallery.com/packages/AzureArmTemplateHelper/
 
 .LINK
-GitHub repository - https://github.com/tksh164/AzureArmTemplateHelper
+GitHub: https://github.com/tksh164/AzureArmTemplateHelper
+
+.LINK
+Set-AzureArmTemplateFile
 #>
 function Get-AzureArmTemplateDeployUri
 {
