@@ -98,7 +98,7 @@ Get-AzureArmTemplateDeployUri
 function Set-AzureArmTemplateFile
 {
     [CmdletBinding()]
-    [OutputType([PSCustomObject[]])]
+    [OutputType([pscustomobject[]])]
     param (
         [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][ValidateScript({ Test-Path -PathType Container -LiteralPath $_ })]
         [string] $LocalBasePath,
@@ -164,7 +164,7 @@ function Set-AzureArmTemplateFile
             Write-Verbose -Message ('Uploading "{0}" to {1}{2}/{3} ...' -f $localFilePath,$context.BlobEndPoint,$ContainerName,$blobName)
             $result = Set-AzureStorageBlobContent -Context $context -File $localFilePath -Container $ContainerName -Blob $blobName -BlobType Block -Force:$Force
 
-            [PSCustomObject] @{
+            [pscustomobject] @{
                 Uri = $result.ICloudBlob.StorageUri.PrimaryUri
             }
         }
@@ -210,7 +210,7 @@ Set-AzureArmTemplateFile
 function Get-AzureArmTemplateDeployUri
 {
     [CmdletBinding()]
-    [OutputType([PSCustomObject])]
+    [OutputType([pscustomobject])]
     param(
         [Parameter(Mandatory = $true, Position = 0)][ValidateNotNullOrEmpty()]
         [string] $TemplateUri,
@@ -230,7 +230,7 @@ function Get-AzureArmTemplateDeployUri
         Start-Process -FilePath $uri
     }
 
-    [PSCustomObject] @{
+    [pscustomobject] @{
         Uri = $uri
     }
 }
