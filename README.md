@@ -90,6 +90,8 @@ PS > Get-AzureArmTemplateDeployUri -TemplateUri 'https://abcd1234.blob.core.wind
 ### [1.0.0](https://github.com/tksh164/AzureArmTemplateHelper-PowerShellModule/releases/tag/1.0.0)
 - Initial release.
 
-
 ## License
-This project is licensed under the [MIT](https://github.com/tksh164/AzureArmTemplateHelper-PowerShellModule/blob/master/LICENSE) license.
+
+Copyright (c) 2017-present Takeshi Katano. All rights reserved. This software is released under the [MIT License](https://github.com/tksh164/AzureArmTemplateHelper-PowerShellModule/blob/master/LICENSE).
+
+Disclaimer: The codes stored herein are my own personal codes and do not related my employer's any way.
